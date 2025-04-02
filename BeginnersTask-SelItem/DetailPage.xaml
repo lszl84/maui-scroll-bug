@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeginnersTasks.DetailPage"
+             xmlns:viewmodel="clr-namespace:BeginnersTasks.ViewModel"
+             x:DataType="viewmodel:DetailViewModel"
+             Title="DetailPage">
+
+    <CollectionView ItemsSource="{Binding Strings}"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedString}"
+                    SelectionChangedCommand="{Binding StringSelectedCommand}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout
+                    HeightRequest="100">
+                    <Label Text="Sample Name"/>
+                    <Label Text="Sample Desc"/>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
